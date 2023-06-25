@@ -17,8 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             x
           </button>
           <ul
-            style={{ top: open ? 0 : "-100%" }}
-            className="absolute left-0 bg-amber-300 w-full h-screen grid items-center justify-center text-6xl transition-all duration-500"
+            // style={{ top: open ? 0 : "-100%" }}
+            style={{ height: open ? "100vh" : "0" }}
+            className="absolute top-0 left-0 overflow-hidden bg-amber-300 w-full h-screen grid items-center justify-center text-6xl transition-all duration-500"
           >
             <li>
               <Link href={"/"} className={pathname === "/" ? "active" : ""}>
