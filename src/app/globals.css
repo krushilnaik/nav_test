@@ -18,10 +18,19 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
+}
+
+a {
+  @apply relative before:absolute hover:before:w-full transition-[text-shadow] duration-300 [text-shadow:_0_0_0_black];
+}
+
+a.active,
+a:hover {
+  @apply [text-shadow:_2px_0_0_black] before:w-full;
+}
+
+a::before {
+  @apply transition-all bg-gray-800 w-0 h-[2px] -bottom-[1px] rounded-full;
 }
